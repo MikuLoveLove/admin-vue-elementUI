@@ -1,0 +1,72 @@
+@import "var";
+@import "base";
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+
+  .basic-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+
+    .side-menu {
+      width: 210px;
+      height: 100%;
+      background: @menuBgColor;
+      flex: 0 0 210px;
+      transition: 0.3s;
+
+      &.active {
+        flex: 0 0 65px;
+        width: 65px;
+      }
+    }
+
+    //@media screen  and (max-width:800px) {
+    //  .side-menu {
+    //    flex: 0 0 65px;
+    //    width: 65px;
+    //  }
+    //}
+
+    .basic-inner {
+      min-height: 100vh;
+      display: flex;
+      flex: auto;
+      flex-direction: column;
+      background: #f0f2f5;
+      overflow-y: auto;
+
+      .header-box {
+        height: 85px;
+        width: 100%;
+        flex: 0 0 auto;
+        background: #fff;
+      }
+
+      .basic-content {
+        position: relative;
+        flex: auto;
+        min-height: 0;
+        margin: 24px;
+      }
+
+      footer {
+        height: 100px;
+        box-sizing: border-box;
+        padding-top: 10px;
+        text-align: center;
+        line-height: 30px;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.45);
+      }
+    }
+  }
+}

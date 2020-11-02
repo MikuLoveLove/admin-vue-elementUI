@@ -1,0 +1,40 @@
+@import "var";
+
+.el-menu {
+  background: @menuBgColor;
+  text-align: left;
+  border: none;
+}
+.el-submenu__title {
+  color: @textGray;
+  &&:hover {
+    color: @textLight;
+    background: none;
+  }
+
+}
+.el-menu-item {
+  color: @textGray;
+  &.is-active {
+    background-color: @themColor;
+    color: @textLight;
+  }
+  &:hover {
+    color: @textLight;
+    background: none;
+    &.is-active {
+      background-color: @themColor;
+      color: @textLight;
+    }
+  }
+}
+.table-header-gray{
+  th.is-leaf {
+    background-color: #f7f1fe;
+    color: #6d6d6d;
+
+  }
+  .el-table__header-wrapper .cell {
+    color: #6d6d6d;
+  }
+}
