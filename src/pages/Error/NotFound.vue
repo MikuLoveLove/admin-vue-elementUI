@@ -1,13 +1,13 @@
 <template>
-    <Card>RoleManage</Card>
+    <div>404</div>
 </template>
 
 <script>
     export default {
-        name: 'RoleManage'
+        name: 'NotFound'
     }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 
 </style>

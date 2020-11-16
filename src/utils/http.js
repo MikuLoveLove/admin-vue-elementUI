@@ -6,7 +6,7 @@ import axios from 'axios'
 // 维护一个可取消请求的数组
 let requestArr = []
 // 取消数组中每一个请求
-const clearRequest = () => {
+export const clearRequest = () => {
     if (requestArr.length) {
         // 遍历数组 将每一个取消函数拿出执行
         requestArr.forEach(cancelFunc => {
@@ -39,14 +39,12 @@ const createCancelToken = () => {
     })
 }
 
-export default {
-    request(url, {method = 'get', params, cancel}) {
-        return axios(url, {
-            params,
-            method,
-            timeout: 15000,
-            cancelToken: cancel ? createCancelToken() : null
-        })
-    },
-    clearRequest
+export const request = (url, {method = 'get', params, cancel}) => {
+    method = method.toLowerCase()
+    return axios(url, {
+        params,
+        method,
+        timeout: 15000,
+        cancelToken: cancel ? createCancelToken() : null
+    })
 }

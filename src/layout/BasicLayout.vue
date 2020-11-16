@@ -7,8 +7,15 @@
                 <router-view></router-view>
             </main>
             <footer>
-                <div>Vue Github ElementUI</div>
-                <div>Copyright© 2020 Miku Love Love</div>
+                <div class="link-box">
+                    <UseLink href="https://cn.vuejs.org/" target="_blank">Vue</UseLink>
+                    <UseLink><SelfIcon icon="#icon-github" class="gitHub"/></UseLink>
+                    <UseLink href="https://element.eleme.cn/#/zh-CN" target="_blank">ElementUI</UseLink>
+                </div>
+                <div class="link-box">
+                    <span style="margin-right: 2px">Copyright© 2020</span>
+                    <UseLink href="https://github.com/MikuLoveLove" target="_blank" style="margin-left: 2px">MikuLoveLove</UseLink>
+                </div>
             </footer>
         </section>
     </div>
@@ -17,10 +24,11 @@
 <script>
     import Header from "./components/Header"
     import SideMenu from "./components/SideMenu"
+    import {Link as UseLink} from 'element-ui'
 
     export default {
         name: "BasicLayout",
-        components: {Header, SideMenu},
+        components: {Header, SideMenu, UseLink},
         data() {
             return {
                 collapse: false
@@ -31,7 +39,7 @@
         mounted() {
         },
         methods: {
-            setCollapse () {
+            setCollapse() {
                 console.log(66666)
                 this.collapse = !this.collapse
             }
@@ -39,6 +47,14 @@
     }
 </script>
 
-<style scoped>
-
+<style scoped lang="less">
+    .link-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .gitHub {
+            margin: 0 15px;
+            font-size: 22px;
+        }
+    }
 </style>

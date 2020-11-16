@@ -36,6 +36,7 @@
 <style scoped>
     .header-top {
         padding: 0 15px;
+        font-size: 22px;
         line-height: 49px;
         border-bottom: 1px solid #ededed;
     }
