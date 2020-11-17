@@ -10,7 +10,7 @@
             <TableColumn prop="account" label="分类名称"/>
             <TableColumn prop="name" label="角色描述"/>
             <TableColumn prop="roles" label="类型"/>
-            <TableColumn prop="status" label="角色人数"/>
+            <TableColumn prop="status" label="分类等级"/>
             <TableColumn label="操作">
                 <template slot-scope="scope">
                     <BasicButton @stroke="editCategory(scope.row)" type="primary" plain text="编辑"/>
@@ -53,6 +53,7 @@
                 this.dataList = []
             },
             addCategory() {
+
             },
             editCategory() {
             },

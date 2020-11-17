@@ -13,9 +13,9 @@
                 </Tooltip>
             </div>
         </section>
-        <Table :data="dataList" size="medium" stripe class="table-header-gray">
-            <TableColumn type="index" label="序号"/>
-            <TableColumn prop="account" label="账号"/>
+        <Table :data="dataList" size="medium" stripe class="table-header-gray" border>
+            <TableColumn type="index" label="序号" width="100"/>
+            <TableColumn prop="account" label="UID"/>
             <TableColumn prop="name" label="用户名"/>
             <TableColumn prop="roles" label="拥有角色"/>
             <TableColumn prop="status" label="当前状态">

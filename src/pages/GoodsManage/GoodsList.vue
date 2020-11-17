@@ -1,7 +1,7 @@
 <template>
     <Card>
         <section class="content-top">
-            <Button size="small" type="primary" icon="el-icon-plus" @click="addUser">添加商品</Button>
+            <Button size="small" type="primary" icon="el-icon-plus" @click="addGoods">添加商品</Button>
             <Input v-model="params.keyword" placeholder="请输商品名称/编号查询" suffix-icon="el-icon-search" size="small"
                    style="width:280px;"/>
         </section>
@@ -87,8 +87,8 @@
                 this.dataList = dataArr
             },
             // 新增用户
-            addUser() {
-                this.isShowUserModal = true
+            addGoods() {
+                this.$router.push({name: 'goodsDetail', query: {type: 'add'}})
             },
             // 编辑用户
             editUser() {

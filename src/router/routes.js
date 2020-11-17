@@ -43,6 +43,11 @@ const mainPage = [
                 component: () => import(/* webpackChunkName: "goodsManage" */ '../pages/GoodsManage/GoodsList')
             },
             {
+                path: 'goodsManage/goodsList/GoodsDetail',
+                name: 'goodsDetail',
+                component: () => import(/* webpackChunkName: "goodsManage" */ '../pages/GoodsManage/GoodsDetail')
+            },
+            {
                 path: 'orderManage/orderList',
                 name: 'orderList',
                 component: () => import(/* webpackChunkName: "orderManage" */ '../pages/OrderManage/OrderList')

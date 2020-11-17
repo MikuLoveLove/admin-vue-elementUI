@@ -5,24 +5,9 @@
             :before-close="handleClose"
             width="550px"
     >
-        <Form
-                :rules="rules"
-                :model="formData"
-                label-position="right"
-                label-width="100px"
-                size="medium"
-                style="margin: 0 50px 0 30px"
-                ref="addUser">
-            <FormItem label="账号：" prop="account">
-                <Input v-model="formData.account" placeholder="请输入账号"/>
-            </FormItem>
+        <Form :rules="rules" :model="formData" label-position="right" label-width="100px" size="small" ref="addRole" style="margin: 0 50px 0 30px" >
             <FormItem label="角色名：" prop="username">
                 <Input v-model="formData.username" placeholder="请输入角色名"/>
-            </FormItem>
-            <FormItem label="授权角色：" prop="roles">
-                <Select v-model="formData.roles" placeholder="请选择角色" style="width: 100%" multiple>
-                    <Option v-for="role in roleList" :value="role.roleId" :key="role.roleId" :label="role.roleName"/>
-                </Select>
             </FormItem>
             <FormItem label="备注：" prop="info">
                 <Input type="textarea" v-model="formData.info" placeholder="请输入备注"/>
@@ -30,7 +15,7 @@
         </Form>
         <span slot="footer" class="dialog-footer">
             <Button @click="handleClose" size="small">取 消</Button>
-            <Button type="primary" @click="addUser" size="small">确 定</Button>
+            <Button type="primary" @click="addRole" size="small" :loading="isLoading">确 定</Button>
         </span>
     </Dialog>
 </template>
@@ -50,6 +35,8 @@
         },
         data() {
             return {
+                step: 1,
+                isLoading: false,
                 rules: {
                     account: [{required: true, message: '请输入账号', trigger: null}],
                     username: [{required: true, message: '请输入用户名'}],
@@ -74,12 +61,12 @@
         methods: {
             closeModal (v) {
                 this.$emit('close-modal', v)
-                this.$refs.addUser.resetFields()
+                this.$refs.addRole.resetFields()
             },
             handleClose() {
                 this.closeModal(false)
             },
-            addUser () {
+            addRole () {
                 this.closeModal(true)
             }
         }
