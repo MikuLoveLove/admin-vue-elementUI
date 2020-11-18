@@ -9,6 +9,11 @@ const router = new Router({
     mode: 'history'
 })
 
-
+// 全局路由前置守卫
+router.beforeEach((to, from, next) => {
+    if (to.path === '/') {
+        next({name: 'home'})
+    } else next()
+})
 
 export default router
